@@ -21,8 +21,9 @@
 #include <unistd.h>
 #include <math.h>
 
-//#define DIAGRAM_STEP 10
-#define SIZE_STEP 1024
+// fixed size and step for bar graph
+//#define DIAGRAM_STEP 1
+//#define SIZE_STEP 1024
 
 int size_step = 1024;
 int number_of_stars = 80;

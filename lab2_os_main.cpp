@@ -21,7 +21,6 @@
 #include <mach/vm_map.h>
 #include <unistd.h>
 #include <sys/param.h>
-//#include <proc/readproc.h>
 
 
 using namespace std;
@@ -49,7 +48,6 @@ float GetCPULoad()
         unsigned long long totalTicks = 0;
         for(int i=0; i<CPU_STATE_MAX; i++) totalTicks += cpuinfo.cpu_ticks[i];
         return CalculateCPULoad(cpuinfo.cpu_ticks[CPU_STATE_SYSTEM], totalTicks);
-//        return CalculateCPULoad(cpuinfo.cpu_ticks[CPU_STATE_IDLE], totalTicks);
     }
     else return -1.0f;
 }

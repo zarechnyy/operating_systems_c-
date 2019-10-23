@@ -173,13 +173,9 @@ void *functionProducer(void *arg) {
         if (items->size <= 1) {
             push(*items);
             pthread_mutex_unlock(&mtx);
-//            dispatch_semaphore_signal(prod_sem);
-//        }else if (items->size > 5) {
-//            pthread_mutex_unlock(&mtx);
         }else {
             pthread_mutex_unlock(&mtx);
             push(*items);
-//            dispatch_semaphore_signal(prod_sem);
         }
         sleep(1);
         pthread_mutex_unlock(&prod_mtx);

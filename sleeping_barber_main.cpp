@@ -57,19 +57,16 @@ void *barber(void *arg)/*Barber Process*/
 {
     while(time(NULL)<end_time || counter > 0)
     {
-//        if (counter > 0) {
-            dispatch_semaphore_wait(customer_sem, DISPATCH_TIME_FOREVER);
-            mtx.lock();
-            counter--;
-            printf("Barber:cut hair,count is:%d.\n",counter);
-            if (counter == 0) {
-                printf("Barber fall asleep\n");
-            }
-            mtx.unlock();
-            dispatch_semaphore_signal(barber_sem);
-            sleep(3);
-        
-//        }
+        dispatch_semaphore_wait(customer_sem, DISPATCH_TIME_FOREVER);
+        mtx.lock();
+        counter--;
+        printf("Barber:cut hair,count is:%d.\n",counter);
+        if (counter == 0) {
+            printf("Barber fall asleep\n");
+        }
+        mtx.unlock();
+        dispatch_semaphore_signal(barber_sem);
+        sleep(3);
     }
     return nullptr;
 }

@@ -89,6 +89,7 @@ int main(int argc, char* argv[]){
     
     char directory[256] = "/Users/yaroslavzarechnyy/Desktop/test";
     
+    //ability to choose your own path
 //    std::cout << "Write path to directory" << std::endl;
 //    std::cin >> directory;
     
